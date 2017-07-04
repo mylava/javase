@@ -1,6 +1,7 @@
 package cn.mylava._300._101_MyArrayList;
 
 /**
+ * 存储结构为数组
  * Created by lpf on 16/8/8.
  */
 public class MyArrayList {
