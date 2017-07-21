@@ -4,6 +4,7 @@ import java.util.IdentityHashMap;
 import java.util.Set;
 
 /**
+ * IdentityMap :键只以地址去重，不比较HashCode和equals
  * @author lipengfei
  */
 public class IdentityHashMapDemo {
