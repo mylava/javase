@@ -43,14 +43,13 @@ public class CopyFile {
             dest.createNewFile();
         }
 
-        FileInputStream is = null;
-
-        FileOutputStream os = null;
+        InputStream is = null;
+        OutputStream os = null;
         try {
             //1.2
-            is = new FileInputStream(src);
+            is = new BufferedInputStream(new FileInputStream(src));
             //2.2  false表示覆盖写入，true表示追加
-            os = new FileOutputStream(dest,false);
+            os = new BufferedOutputStream(new FileOutputStream(dest,false));
             //1.3  观察输出时，可以将length改小一点
             byte[] car = new byte[1024];
             int len = 0;

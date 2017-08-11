@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class CopyDirectory {
     public static void main(String[] args) {
         String src = "/Users/lipengfei/Desktop/logs";
-        String dest = "/Users/lipengfei/Desktop/logsback";
+        String dest = "/Users/lipengfei/Desktop/logs/logsback";
         try {
             copyDirectory(src,dest);
         } catch (IOException e) {
@@ -33,6 +33,11 @@ public class CopyDirectory {
                         //需要提供操作系统的权限
                         boolean result = dest.delete();
                     }
+                }
+
+                if (dest.getAbsolutePath().contains(src.getAbsolutePath())) {
+                    System.out.println("父目录不能拷贝到子目录中！");
+                    return;
                 }
                 dest.mkdirs();
                 for (File sub:src.listFiles()) {
