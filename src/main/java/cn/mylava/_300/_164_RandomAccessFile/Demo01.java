@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 
 /**
+ * RandomAccessFile通过seek方法指定开始读取位置
+ *
  * 文件的分割与合并
  *
  * 思路：
