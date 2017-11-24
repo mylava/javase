@@ -11,7 +11,7 @@ public class TestIOException {
     public static void main(String[] args) {
         FileReader reader = null;
         try {
-            reader = new FileReader("Test.txt");
+            reader = new FileReader("ThreadPool.txt");
             char c = (char) reader.read();
             System.out.println(c);
         }  catch (FileNotFoundException e){
