@@ -1,5 +1,7 @@
 package cn.mylava._itcast.Collection;
 
+import com.google.common.hash.Hashing;
+
 import java.io.IOException;
 import java.io.InvalidObjectException;
 import java.io.Serializable;
@@ -204,7 +206,7 @@ public class MyHashMap<K,V> extends AbstractMap<K,V>
         //否则使用系统函数得到新的hashSeed
         if (switching) {
             hashSeed = useAltHashing
-                    ? sun.misc.Hashing.randomHashSeed(this)
+                    ? null/*sun.misc.Hashing.randomHashSeed(this)*/ //1.8将包权限修改为不可访问
                     : 0;
         }
         return switching;
@@ -219,7 +221,7 @@ public class MyHashMap<K,V> extends AbstractMap<K,V>
         //通过hashSeed初始化的值的不同来选择不同的hash方式
         if (0 != h && k instanceof String) {
             //通过hashSeed初始化的值的不同来选择不同的hash方式
-            return sun.misc.Hashing.stringHash32((String) k);
+            return 0 /*sun.misc.Hashing.stringHash32((String) k)*/;//1.8将包权限修改为不可访问
         }
 
         h ^= k.hashCode();

@@ -1,7 +1,12 @@
 package cn.mylava.Tmp;
 
 import cn.mylava.Tmp.test.SignConf;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.collections4.map.HashedMap;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Stack;
 
 /**
@@ -104,7 +109,7 @@ public class TestSign {
     }
 
     public static void main(String[] args) {
-        //(A+(B*C)*D+A)*E
+        //(A+(B*C)*D+A)*E   A serect     B 待加密参数   C  加密方式  D  大小写  E 排序
         String expression = "(A+(B*C)*D+A)*E";
         SignConf conf = new SignConf();
         conf.setSecrect("A");
@@ -115,5 +120,6 @@ public class TestSign {
 
         String result = evaluateExpression(expression,conf);
         System.out.println(result);
+
     }
 }

@@ -1,0 +1,44 @@
+import com.ruowei.channelapi.core.RequestDetail;
+import net.sf.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public Map<String, Object> doProcess(Object[] params) {
+        JSONObject responseJson = (JSONObject) params[0];
+        String orderId = (String) params[1];
+        Map<String, Object> codeMap = (Map<String, Object>) params[2];
+        //返回resCode,resMsg,outOrderId,requestDetail
+        String resCode = "0";
+        String retMsg = "";
+        String outOrderId = "";
+
+        //脚本编写代码开始
+        String retCode = responseJson.get("status")+"";
+        retMsg =  responseJson.get("message")+"";
+        // 外层报文状态
+        if ("0".equals(retCode)) {
+            resCode = "0";
+            retMsg = "成功";
+        }else {
+            resCode = "2";
+            retMsg = "失败";
+        }
+        retMsg = codeMap.get(retCode)!=null?(String) codeMap.get(retCode):retMsg;
+
+        outOrderId = responseJson.getJSONObject("data")!=null?responseJson.getJSONObject("data").getString("orderId"):"";
+
+        RequestDetail requestDetail = new RequestDetail();
+        requestDetail.setResultCode(retCode);
+        requestDetail.setResultMsg(retMsg);
+        //脚本编写结束
+
+        Map<String, Object> result = new HashMap<>();
+
+        result.put("resCode",resCode);
+        result.put("retMsg",retMsg);
+        result.put("outOrderId",outOrderId);
+        result.put("requestDetail",requestDetail);
+
+        return result;
+    }
