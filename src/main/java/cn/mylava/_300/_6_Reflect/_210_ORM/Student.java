@@ -8,11 +8,11 @@ package cn.mylava._300._6_Reflect._210_ORM;
  */
 @TableName("tb_student")
 public class Student {
-    @FieldProperties(columnName = "id",type = "int",length = 10)
+    @Column(columnName = "id",type = "int",length = 10)
     private int id;
-    @FieldProperties(columnName = "sname",type = "varchar",length = 50)
+    @Column(columnName = "sname",type = "varchar",length = 50)
     private String studentName;
-    @FieldProperties(columnName = "age",type = "int",length = 3)
+    @Column(columnName = "age",type = "int",length = 3)
     private int age;
 
     public int getId() {

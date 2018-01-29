@@ -4,6 +4,9 @@ import java.lang.reflect.Method;
 
 /**
  * comment: 对比反射(安全检查开/关状态下)和普通调用的性能差距
+ * setAccessible 启用或禁用访问安全检查的开关，true表示反射的对象在使用时取消Java语言访问检查，false则相反。
+ * 并不是true就能访问，false就不能访问。
+ * 禁止安全检查，可以提高反射的运行效率。
  *
  * @author: lipengfei
  * @date: 04/01/2018

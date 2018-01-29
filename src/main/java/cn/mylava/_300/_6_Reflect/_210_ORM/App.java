@@ -40,7 +40,7 @@ public class App {
              */
             Field[] fields = clazz.getDeclaredFields();
             for (Field field : fields) {
-                FieldProperties fieldAnnotation = field.getAnnotation(FieldProperties.class);
+                Column fieldAnnotation = field.getAnnotation(Column.class);
                 System.out.println(fieldAnnotation.columnName()+"---"+fieldAnnotation.type()+"---"+fieldAnnotation.length());
             }
 
