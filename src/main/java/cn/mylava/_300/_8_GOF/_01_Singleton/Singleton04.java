@@ -8,7 +8,7 @@ package cn.mylava._300._8_GOF._01_Singleton;
  * @date: 16/01/2018
  */
 public class Singleton04 {
-    //静态内部类，只有在在使用时才会被加载、初始化
+    //静态内部类，只有在第一次加载类时才会被初始化
     private static class InnerClass {
         private static final Singleton04 instance = new Singleton04();
     }

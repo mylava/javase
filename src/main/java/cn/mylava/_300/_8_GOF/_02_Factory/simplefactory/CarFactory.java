@@ -1,7 +1,7 @@
 package cn.mylava._300._8_GOF._02_Factory.simplefactory;
 
 /**
- * comment:
+ * comment: 价值在于：用户不再需要关心生产过程，只关心结果
  *
  * @author: lipengfei
  * @date: 17/01/2018

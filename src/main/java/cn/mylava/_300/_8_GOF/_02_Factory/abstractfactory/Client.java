@@ -12,7 +12,7 @@ import cn.mylava._300._8_GOF._02_Factory.abstractfactory.tyre.Tyre;
  */
 public class Client {
     public static void main(String[] args) {
-        CarFactory luxury = new LuxuryCarFactory();
+        AutomobileFactory luxury = new BusFactory();
         Engine engine = luxury.createEngine();
         engine.run();
         engine.start();
@@ -24,7 +24,7 @@ public class Client {
         tyre.sound();
 
 
-        LowCarFactory low = new LowCarFactory();
+        SuvFactory low = new SuvFactory();
 
     }
 }
