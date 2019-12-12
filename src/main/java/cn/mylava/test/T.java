@@ -1,5 +1,8 @@
 package cn.mylava.test;
 
+import java.net.URL;
+import java.util.Objects;
+
 /**
  * comment:
  *
@@ -16,11 +19,21 @@ public class T {
         System.out.println(sign);
 */
 
-        String t = "order_status: 2\r\n900123456||0.05||2012-09-12||RC000||200000111083||302c021***4f97||000400004500021";
+        /*String t = "order_status: 2\r\n900123456||0.05||2012-09-12||RC000||200000111083||302c021***4f97||000400004500021";
         String[] vvs = t.split("\r\n");
         String[] split = vvs[1].split("\\|\\|");
         for (String s : split){
             System.out.println(s);
-        }
+        }*/
+        String classPath = T.class.getResource("/").getPath();
+
+        System.out.println("classPath:"+ classPath);
+//        System.out.println(T.class.getResource("/").toString().replace("file:",""));
+//        System.out.println(Thread.currentThread().getName());
+        URL resource = Thread.currentThread().getContextClassLoader().getResource("");
+        String classLoaderPath = Objects.requireNonNull(resource).getPath();
+        System.out.println("classLoaderPath:"+classLoaderPath);
+
+        System.out.println(classPath.equals(classLoaderPath));
     }
 }

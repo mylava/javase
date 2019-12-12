@@ -15,6 +15,6 @@ public class SubjectA extends Subject {
 
     public void setState(int state) {
         this.state = state;
-        this.notifyAllObservers();
+        super.notifyAllObservers();
     }
 }

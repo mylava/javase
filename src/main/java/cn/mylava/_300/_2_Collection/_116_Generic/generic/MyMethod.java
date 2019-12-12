@@ -27,8 +27,15 @@ public class MyMethod {
     }
 
 
+    public static void test1(Student<Number> student){
+        System.out.println(student.getJavaScore());
+    }
 
     public static void main(String[] args) {
+//        test1(new Student<Integer>(1,2));
+
+
+
         MyMethod.test("a");
         test(2);
 

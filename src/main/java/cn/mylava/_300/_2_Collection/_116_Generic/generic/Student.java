@@ -12,7 +12,7 @@ package cn.mylava._300._2_Collection._116_Generic.generic;
  *  2.泛型声明时字母不能使用在静态属性|静态方法上. 因为泛型在使用时候才确定类型，而静态属性|静态方法在编译时就要确定类型。
  *
  */
-public class Student<T> {
+public class Student<T extends Number> {
     private T javaScore;
     private T oracleScore;
 

@@ -9,6 +9,8 @@ public class Student {
     //静态数据
     private String name;
     private int id;
+    private final String address="北京市朝阳区";
+    private static String country = "中国";
 
     public Student() {
         System.out.println("调用默认构造器");
@@ -27,7 +29,7 @@ public class Student {
      */
     public Student(String name, int id) {
         //通过this方法调用构造器
-        this(12);
+        this(id);
 
         //如果没有使用this关键字,=左边的name采取就近原则,取的是行参的name,=右边的也是行参的name,这样name没有赋值
         name = name;

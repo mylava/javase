@@ -13,6 +13,7 @@ public class MyClassLoader extends ClassLoader {
 
     public MyClassLoader() {
         String classPath = MyClassLoader.class.getResource("").getPath();
+        System.out.println(classPath);
         this.classPathFile = new File(classPath);
     }
 

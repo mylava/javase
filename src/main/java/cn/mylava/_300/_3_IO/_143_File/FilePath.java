@@ -22,7 +22,7 @@ public class FilePath {
         System.out.println("Path\t-->\t"+directory.getPath());
 
         //3.使用getResource()
-        System.out.println("\nclass.getResource(\"/\")\t-->\t"+FilePath.class.getResource("/"));
+        System.out.println("\nclass.getResource(\"/\")\t-->\t"+FilePath.class.getResource("/").getPath());
         //path不能以“/”开头时，是从ClassPath根下获取，等价于 class.getResource("/")
         System.out.println("class.getClassLoader().getResource(\"\")\t-->\t"+FilePath.class.getClassLoader().getResource(""));
         System.out.println("class.getClassLoader().getResource(\"/\")\t-->\t"+FilePath.class.getClassLoader().getResource("/"));

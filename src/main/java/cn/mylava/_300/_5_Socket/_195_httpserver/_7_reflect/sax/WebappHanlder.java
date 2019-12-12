@@ -110,6 +110,7 @@ public class WebappHanlder extends DefaultHandler {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser saxParser = factory.newSAXParser();
         WebappHanlder hanlder = new WebappHanlder();
+        System.out.println(Thread.currentThread().getContextClassLoader().getResource("").getPath());
         saxParser.parse(Thread.currentThread().getContextClassLoader().getResourceAsStream("cn/mylava/_300/_5_Socket/_195_httpserver/_7_reflect/web.xml"),hanlder);
         for (Entity entity : hanlder.getEntityList()) {
             System.out.println(entity);
